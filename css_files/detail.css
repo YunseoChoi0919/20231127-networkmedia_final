@@ -1,0 +1,505 @@
+
+
+html{
+    font-size: 10px;
+}
+
+@font-face {
+font-family: 'MangoDdobak-B';
+src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2') format('woff2');
+font-weight: 700;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'HakgyoansimWoojuR';
+src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'GowunDodum-Regular';
+src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'InkLipquid';
+src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
+
+
+
+    body{
+        font-family:'GowunDodum-Regular' ;
+        background-color: #DFD4C4;
+        display:flex;
+        justify-content: center;
+    }
+
+.header {
+    
+    position: fixed; /* Fix the header to the top */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0; /* Position at the top of the page */
+    left: 0; /* Align it to the left side */
+    width: 100%; /* Make it span the full width */
+    height:80px;
+    z-index: 1000; /* Ensure it appears above other content */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: adds background to make sure it's visible over content */
+    backdrop-filter: blur(10px);
+    
+    margin :0;
+
+}
+
+.header {
+    
+    position: fixed; /* Fix the header to the top */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0; /* Position at the top of the page */
+    left: 0; /* Align it to the left side */
+    width: 100%; /* Make it span the full width */
+    height:80px;
+    z-index: 1000; /* Ensure it appears above other content */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: adds background to make sure it's visible over content */
+    backdrop-filter: blur(10px);
+    
+    margin :0;
+    
+}
+
+       
+.menu {
+    margin: 15px;
+    width: 35px;
+    cursor: pointer;
+    z-index: 1002;
+    min-width: 35px;
+}
+
+.menu:hover {
+    filter: brightness(0.8); /* hover 효과 */
+}
+
+.submenu {
+    top:80px;
+    display: none;
+    /* position: absolute; */
+    /* top: 100%; 메뉴 바로 아래 */
+    position:fixed;
+
+    right: 0;
+    margin:0;
+
+    padding: 10px 0;
+    z-index: 99999;
+    width: 18vw;
+    min-width: 18vw;
+    list-style: none;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    color:#612a03;
+    font-family: 'HakgyoansimWoojuR';
+    /* font-size: 1.5em; */
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    text-wrap: nowrap;
+
+}
+
+
+
+
+
+.submenu li {
+    padding: 5px ;
+    
+}
+
+.submenu li a {
+    padding-top:10px;
+    padding-left:7vw;
+    text-decoration: none;
+    font-size: 20px;
+    color: #333;
+    display: block;
+    transition:  transform 0.2s ease;
+    text-align:left;
+    margin : 0;
+}
+
+.submenu li a:hover {
+    color: #ac410c;
+    transform: scale(1.3);
+   
+}
+
+
+.submenu li a:active{
+    color :  #ac410c;
+    transform: scale(1.2);
+
+}
+
+
+.menu:hover + .submenu {
+    display: block; /* 메뉴 이미지 위에 hover 시 서브메뉴 표시 */
+}
+
+.cate {
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 2px;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    margin: 0;
+    color:#612a03;
+    border-bottom:#612a03 1.5px solid;
+    margin: 0px 20px 0px 18px;
+}
+
+    .logo{
+        padding-left: 0px;
+        padding-top: 0;
+        transition: transform 0.2s ease;
+        
+
+    }
+
+    .logo:active{
+        transform: scale(1.15);
+    }
+
+    #goto{
+        padding:0;
+        margin:0;
+        position: absolute;
+        left:50%;
+        transform: translate(-50%,0);
+    }
+
+    .back{
+        
+        margin: 15px;
+        width: 35px;
+        cursor: pointer;
+        z-index: 1002;
+    
+    }
+
+
+    /* 여기서부터 페이지 내용 관련 */
+
+
+    .main_con{
+
+        display:flex;
+        width:70vw;
+        /* position:absolute; */
+        top: 170px;
+        height: auto;
+        background-color: rgba(255,255,255,0.5); 
+        /* rgba(255,255,255,0.5) */
+        border-radius: 10px;
+        /* border:#612a03 2px solid; */
+        margin-top: 110px;
+        margin-bottom: 30px;
+        /* margin-bottom: 50px; */
+        /* min-height: 500px; */
+        min-width: 670px;
+        /* padding: 20px 20px; */
+        /* justify-content: space-around; */
+        align-items: center;
+        flex-direction: column;
+        padding: 55px 55px;
+       
+    }
+
+
+
+    /* .dish_right{
+        margin:auto;
+    } */
+
+
+    .ingr {
+        box-sizing: border-box;
+        display: flex;
+        /* border-top: #612a03 4px dotted;
+        border-bottom: #612a03 4px dotted; */
+        /* background-color: #612a03; */
+        flex-wrap: wrap;
+        justify-content:space-between; 
+        align-items: center;
+        border-radius: 20px;
+        background-color: #DFD4C4;
+        /* padding: 0; */
+        padding: 15px;
+        margin: auto; 
+        width: 90%;
+        
+    }
+
+
+    .ingr_img{
+        padding:0;
+        margin :auto;
+        background-color: transparent;
+        transition: transform 4s ease;
+
+    }
+
+
+    .ingr_img:hover {
+    /* transition: transform 6s ease; */
+    transform: rotate(720deg);
+  }
+
+
+
+    .ingr_name{
+        font-size:1.5em;
+        height: auto;
+        padding: 5px 5px;
+        text-align: center;
+
+    }
+
+
+    .ingr_child{
+        padding:0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }   
+    
+    .ingr_child:last-child{
+        margin-right:auto;
+
+    } 
+
+    /* #last_ingr{
+        margin-right:auto;
+    } */
+
+    /* @media (max-width : 800px) {
+
+
+        .ingr_img{
+            width:150px;
+        }
+        
+    } */
+
+   
+
+
+    .dish_img{
+        border-radius: 10px;
+        background-color: #612a03;
+        overflow: hidden;
+        
+    }
+
+    #dish_name{
+        font-family: 'HakgyoansimWoojuR';
+        font-size: 4.5rem;
+        /* padding-top: 20px; */
+        color: #612a03;
+        margin : 20px 30px;
+        padding-bottom:10px;
+        border-bottom: #612a03 2px solid;
+        
+
+    }
+
+
+    .instruction{
+        padding-top:50px;
+        width:55vw;
+        margin:auto;
+    }
+
+    .steps{
+        padding: 0 20px 0 20px;
+        font-size: 1.8em;
+        text-align: justify;
+    }
+
+    .sub-step{
+        font-size : 2.5em;
+        padding-top:30px;
+        /* border-bottom: #612a03 1.5px solid; */
+        color:#612a03;
+        text-align: left;
+        margin-bottom: 10px;
+
+    }
+    .sub-step:first-child{
+        padding-top:0;
+    }
+    .sub-step:last-child{
+        padding-bottom: 0;
+    }
+
+    .ment{
+        padding-top: 60px;
+        padding-bottom: 35px;
+         font-family: 'InkLipquid';
+         font-size: 5em;
+         margin :  auto;
+        text-align: center;
+
+    }
+
+
+    .action{
+        width: 55vw;
+        display: flex;
+        justify-content: space-around;
+
+    }
+    .action_buttons{
+        font-family: 'GowunDodum-Regular';
+        font-size: 1.8em;
+        padding-top:5px;
+        padding-bottom:5px;
+        width: 200px;
+        background-color: transparent;
+        color: #612a03;
+        border: 1.5px solid #985627;
+        border-radius: 20px; 
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s ease;
+        font-weight: bolder;
+        text-align: center;
+        text-decoration: none;
+        margin: 0;
+        text-wrap: nowrap;
+    }
+
+    .action_buttons:hover{
+        background-color: #ffce5d;
+    }
+
+    /* .eval_title{
+        font-family: 'GowunDodum-Regular' ;
+        font-size: 0.5em;
+    } */
+
+
+     body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } 
+
+    .footer{
+        text-align: center;
+        font-size: 15px;
+        padding:0;
+        margin-bottom:20px;
+
+    }
+
+    p{
+        padding:0;
+        margin:0;
+    }
+
+    .sub_con{
+        display: flex;
+        /* background-color: #612a03; */
+        justify-content: space-between;
+    }
+
+    @media(max-width: 1200px){
+        .sub_con{
+            width:55vw;
+            min-width: 500px;
+            flex-wrap: wrap;
+            padding:0;
+            margin:0;
+            flex-direction: column;
+            justify-self: center;
+        }
+        .dish{
+            display: flex;
+            justify-content: center;
+        }
+        #dish_name{
+            
+            padding: 10px 10px;
+            margin: 0px 10px 20px 10px;
+        }
+        
+        .action{
+            width: 200px;
+            flex-wrap: wrap;
+        }
+        .action_buttons{
+            margin-bottom: 10px;
+        }
+        .action_buttons:last-child{
+            margin:0;
+        }
+    }
+
+    span{
+        color: rgb(141, 23, 5);
+        font-weight: bolder;
+    }
+
+
+    #soup {
+        position: relative; 
+        cursor: pointer;
+        color: #31649a;
+        text-decoration: underline;
+        
+    }
+
+    /* 팝업 박스 기본 스타일 */
+    .popup {
+        display: none; 
+        position: absolute;
+        top: 100%; 
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff6eb;
+        color: black;
+        font-size: 15px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width:300px;
+
+        
+        
+    }
+
+    /* hover 시 팝업 보이기 */
+    #soup:hover .popup {
+        display: block;
+    }
+
+
+
+
+
+
+
+
+
