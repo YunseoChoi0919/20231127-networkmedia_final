@@ -1,0 +1,91 @@
+
+        const canvas = document.getElementById('foodCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const foodImages = [ './ingrs/1.png', './ingrs/2.png', './ingrs/11.png', './ingrs/17.png',
+  './ingrs/26.png', './ingrs/31.png', './ingrs/22.png', './ingrs/24.png',
+  './ingrs/25.png', './ingrs/10.png', './ingrs/28.png', './ingrs/3.png',
+  './ingrs/30.png', './ingrs/19.png'];
+        const foods = [];
+
+        
+        class Food {
+            constructor(img, x, y, speedX, speedY) {
+                this.img = img;
+                this.x = x;
+                this.y = y;
+                this.speedX = speedX;
+                this.speedY = speedY;
+                this.width = 130; 
+                this.height = 130;
+            }
+
+            draw() {
+                ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                
+                if (this.x < 0 || this.x + this.width > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y + this.height > canvas.height) this.speedY *= -1;
+            }
+        }
+
+       
+        foodImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+            img.onload = () => {
+                const x = (Math.random() * 0.8+0.05) * canvas.width;
+                const y = (Math.random() * 0.8+0.05) * canvas.height;
+                const speedX = (Math.random() -0.5) * 1.5;
+                const speedY = (Math.random() -0.5) * 1.5;
+                foods.push(new Food(img, x, y, speedX, speedY));
+            };
+        });
+
+        
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            foods.forEach(food => {
+                food.update();
+                food.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+
+        ///메뉴바 관련
+        const menu = document.querySelector('.menu');
+        const submenu = document.querySelector('.submenu');
+
+        let submenuTimeout;
+
+        menu.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout); 
+            submenu.style.display = 'block'; 
+        });
+
+        menu.addEventListener('mouseleave', () => {
+            submenuTimeout = setTimeout(() => {
+                submenu.style.display = 'none';
+            }, 200); 
+        });
+
+       
+        submenu.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout); 
+        });
+
+        submenu.addEventListener('mouseleave', () => {
+            submenuTimeout = setTimeout(() => {
+                submenu.style.display = 'none'; 
+            }, 400); 
+        });

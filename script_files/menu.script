@@ -1,0 +1,27 @@
+        ///메뉴바 관련
+        const menu = document.querySelector('.menu');
+        const submenu = document.querySelector('.submenu');
+
+        let submenuTimeout;
+
+        menu.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout); 
+            submenu.style.display = 'block'; 
+        });
+
+        menu.addEventListener('mouseleave', () => {
+            submenuTimeout = setTimeout(() => {
+                submenu.style.display = 'none';
+            }, 200); 
+        });
+
+        
+        submenu.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout); 
+        });
+
+        submenu.addEventListener('mouseleave', () => {
+            submenuTimeout = setTimeout(() => {
+                submenu.style.display = 'none';
+            }, 400); 
+        });
