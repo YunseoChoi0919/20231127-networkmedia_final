@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>introduction</title>
+    <style>
+
+    html{
+        font-size: 10px;
+    }
+        @font-face {
+    font-family: 'MangoDdobak-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+ }
+
+ @font-face {
+    font-family: 'InkLipquid';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+        body{
+            font-family:'GowunDodum-Regular' ;
+            background-color: #f1c2ac;
+            display:flex;
+            justify-content: center;
+        }
+    
+    .header {
+        
+        position: fixed; /* Fix the header to the top */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 0; /* Position at the top of the page */
+        left: 0; /* Align it to the left side */
+        width: 100%; /* Make it span the full width */
+        height:80px;
+        z-index: 1000; /* Ensure it appears above other content */
+        background-color: rgba(255, 255, 255, 0.8); /* Optional: adds background to make sure it's visible over content */
+        backdrop-filter: blur(10px);
+        
+        margin :0;
+    
+}
+
+.header {
+        
+        position: fixed; /* Fix the header to the top */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 0; /* Position at the top of the page */
+        left: 0; /* Align it to the left side */
+        width: 100%; /* Make it span the full width */
+        height:80px;
+        z-index: 1000; /* Ensure it appears above other content */
+        background-color: rgba(255, 255, 255, 0.8); /* Optional: adds background to make sure it's visible over content */
+        backdrop-filter: blur(10px);
+        
+        margin :0;
+        
+    }
+    
+            .menu {
+                margin: 15px;
+                width: 35px;
+                cursor: pointer;
+                z-index: 1002;
+            }
+    
+            .menu:hover {
+                filter: brightness(0.8); /* hover 효과 */
+            }
+    
+            .submenu {
+                top:80px;
+                display: none;
+                /* position: absolute; */
+                /* top: 100%; 메뉴 바로 아래 */
+                position:fixed;
+    
+                right: 0;
+                margin:0;
+    
+                padding: 10px 0;
+                z-index: 99999;
+                width: 20vw;
+                list-style: none;
+                /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+                color:#612a03;
+    
+                background-color: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(10px);
+                
+    
+            }
+    
+    
+    
+    
+    
+            .submenu li {
+                padding: 5px ;
+                
+            }
+    
+            .submenu li a {
+                padding-left:8vw;
+                text-decoration: none;
+                font-size: 17px;
+                color: #333;
+                display: block;
+                transition:  transform 0.2s ease;
+                text-align:left;
+                margin : 0;
+            }
+    
+            .submenu li a:hover {
+                color: #ac410c;
+                background-color: #E0CDBE;
+            }
+    
+    
+            .submenu li a:active{
+                color :  #ac410c;
+                transform: scale(1.2);
+    
+            }
+    
+    
+            .menu:hover + .submenu {
+                display: block; /* 메뉴 이미지 위에 hover 시 서브메뉴 표시 */
+            }
+    
+            .cate {
+                text-align: left;
+                font-size: 25px;
+                font-weight: bold;
+                padding-left: 20px;
+                padding-top: 5px;
+                margin: 0;
+                color:#612a03;
+            }
+
+        .logo{
+            padding-left: 0px;
+            padding-top: 0;
+            transition: transform 0.2s ease;
+            
+
+        }
+
+        .logo:active{
+            transform: scale(1.15);
+        }
+
+        #goto{
+            padding:0;
+            margin:0;
+            position: absolute;
+            left:50%;
+            transform: translate(-50%,0);
+        }
+
+        .back{
+            
+            margin: 15px;
+            width: 35px;
+            cursor: pointer;
+            z-index: 1002;
+        
+        }
+
+
+        /* 여기서부터 페이지 내용 관련 */
+
+
+        .main_con{
+
+            display:flex;
+            width:70vw;
+            /* position:absolute; */
+            top: 170px;
+            height: auto;
+            /* background-color: rgba(255,255,255,0.5);  */
+            /* rgba(255,255,255,0.5) */
+            border-radius: 10px;
+            /* border:#612a03 2px solid; */
+            margin-top: 110px;
+        
+            /* margin-bottom: 50px; */
+            /* min-height: 500px; */
+            min-width: 670px;
+            /* padding: 20px 20px; */
+            /* justify-content: space-around; */
+            /* align-items: center; */
+            flex-direction: row;
+            justify-content: space-between;
+            padding:0;
+            
+            
+           
+        }
+        .container1, .container2{
+            box-sizing: border-box;
+            background-color: rgba(255,255,255,0.5); 
+            border-radius: 10px;
+            padding: 40px 40px ;
+            margin:0;
+        }
+
+        .container1{
+            width: 33%;
+        }
+
+        .container2{
+            width: 65%;
+        }
+
+        .name{
+   
+            font-family:'HakgyoansimWoojuR';
+            font-size:50px;
+            padding-bottom:5px;
+            border-bottom:#612a03 1.7px solid;
+            color: #612a03;
+
+        }
+
+        .discription{
+            
+            font-size:20px;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        } 
+
+        .footer{ 
+            
+            text-align: center;
+            font-size: 15px;
+            padding-top: 20px;
+            margin-bottom: 20px;
+
+        }
+
+
+        .footer p{
+            padding:0;
+            margin:0;
+        }
+
+
+
+
+    </style>
+</head>
+
+
+<body>
+    <div class="header">
+        <a id = 'back_button' href="javascript:history.back()">
+            <img class = "back" src = "./back.png">
+        </a>
+        <a id = "goto" href="index.html">
+            <img class="logo" src="./b_logo.png" width="250px">
+        </a>
+
+            <img class="menu" src="./menu4.png" alt="Menu Icon">
+            <ul class="submenu">
+                <div class = 'cate'> 메인요리</div>
+                    <li><a href="#">잔치국수</a></li>
+                    <li><a href="#">닭도리탕</a></li>
+                    <li><a href="#">불고기</a></li>
+                    <li><a href="#">에그누들</a></li>
+                <div class = 'cate'> 반찬</div>
+                    <li><a href="#">시금치 나물</a></li>
+                    <li><a href="#">버섯 나물</a></li>
+                    <li><a href="#">미역 나물</a></li>
+                    <li><a href="#">호박나물</a></li>
+                    <li><a href="#">숙주나물</a></li>
+                    <li><a href="#">진미채</a></li>
+                    <li><a href="#">계란찜</a></li>
+                    <li><a href="#">산적</a></li>
+    
+                <div class = 'cate'> 국</div>
+                    <li><a href="#">된장찌개</a></li>
+                    <li><a href="#">미역국</a></li>
+                    <li><a href="#">육개장</a></li>
+            </ul>
+    
+
+    </div>
+
+    <div class = "main_con">
+
+        <div class="container1">
+            <img src = "./pic.jpg" width = 100%>
+        </div>
+
+        <div class="container2">
+            <div class = "name">김수자</div>
+
+            <div class = "discription">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae fugit quis aspernatur totam, id labore, voluptatum qui ratione eaque sunt ut maxime magni soluta? Porro, consectetur magni. Ea, fugiat adipisci.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class = "footer">
+
+        <p> &copy; All Rights Reserved</p>
+        <p>레시피 제공  &nbsp;김수자님, 류상철님 | 일러스트  &nbsp;최윤서 | 웹 제작  &nbsp;최윤서 </p>
+
+    </div>
+
+
+ 
+
+
+
+
+
+
+
+    <script>
+        ///메뉴바 관련
+        const menu = document.querySelector('.menu');
+        const submenu = document.querySelector('.submenu');
+
+        let submenuTimeout;
+
+        menu.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout); 
+            submenu.style.display = 'block'; 
+        });
+
+        menu.addEventListener('mouseleave', () => {
+            submenuTimeout = setTimeout(() => {
+                submenu.style.display = 'none';
+            }, 200); 
+        });
+
+        
+        submenu.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout); 
+        });
+
+        submenu.addEventListener('mouseleave', () => {
+            submenuTimeout = setTimeout(() => {
+                submenu.style.display = 'none';
+            }, 400); 
+        });
+    </script>
+</body>
+</html>
