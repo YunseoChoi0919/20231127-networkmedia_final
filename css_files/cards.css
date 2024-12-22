@@ -221,6 +221,19 @@ transition: transform 0.3s ease, box-shadow 0.2s ease;
 
 }
 
+.recipe{
+    background-color: #d7dead;
+    border-radius: 15px;
+    width: 320px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-width: 200px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.2s ease; 
+}
+
 .soup_recipe:hover, .main_recipe:hover {
 transform: scale(1.07) translateY(-10px); 
 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
